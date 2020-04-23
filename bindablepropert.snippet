@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Bindable property</Title>
+            <Author>João Bartolot</Author>
+            <Description>Generate a bindable property</Description>
+            <Shortcut>bindprop</Shortcut>
+        </Header>
+        <Snippet>
+            <Imports>
+                <Import>
+                    <Namespace>Xamarin.forms</Namespace>
+                </Import>
+            </Imports>
+
+            <Declarations>
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>Choose a name for the property</ToolTip>
+                    <Default>Field</Default>
+                </Literal>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>Choose a type for the field</ToolTip>
+                    <Default>int</Default>
+                </Literal>
+                <Literal>
+                    <ID>defaultvalue</ID>
+                    <ToolTip>Choose a default value for the field</ToolTip>
+                    <Default>null</Default>
+                </Literal>
+                <Literal default="true" Editable="false">
+                    <ID>classname</ID>
+                    <ToolTip>Class name</ToolTip>
+                    <Function>ClassName()</Function>
+                    <Default>ClassNamePlaceholder</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="CSharp">
+                <![CDATA[
+                    public static readonly BindableProperty $name$Property =
+                        BindableProperty.Create(nameof($name$), typeof($type$), typeof($classname$), $defaultvalue$);
+
+                    public $type$ $name$ {
+                        get => ($type$)GetValue($name$Property);
+                        set => SetValue($name$Property, value);
+                    }
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

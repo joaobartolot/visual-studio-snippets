@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Http method</Title>
+            <Author>João Bartolot</Author>
+            <Description>Generate a Http request method</Description>
+            <Shortcut>httprqst</Shortcut>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>summary</ID>
+                    <ToolTip>Brief description about the endpoit.</ToolTip>
+                    <Default>Brief description about the endpoit.</Default>
+                </Literal>
+                <Literal>
+                    <ID>route</ID>
+                    <ToolTip>The endpoit route.</ToolTip>
+                    <Default>""</Default>
+                </Literal>
+                <Literal>
+                    <ID>method</ID>
+                    <ToolTip>Choose a default value for the field</ToolTip>
+                    <Default>null</Default>
+                </Literal>
+                <Literal default="true" Editable="false">
+                    <ID>classname</ID>
+                    <ToolTip>Class name</ToolTip>
+                    <Function>ClassName()</Function>
+                    <Default>ClassNamePlaceholder</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="CSharp">
+                <![CDATA[
+                    /// <summary>
+                    /// $summary$
+                    /// </summary>
+                    [Route($route$)]
+                    [Http$method$]
+                    [Authorize]
+                    public IHttpActionResult $methodname$($params$) {
+                        $code$
+                    }
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

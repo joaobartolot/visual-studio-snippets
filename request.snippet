@@ -8,6 +8,12 @@
             <Shortcut>httprqst</Shortcut>
         </Header>
         <Snippet>
+            <Imports>
+                <Import>
+                    <Namespace>System.Web.Http</Namespace>
+                </Import>
+            </Imports>
+
             <Declarations>
                 <Literal>
                     <ID>summary</ID>
@@ -21,14 +27,17 @@
                 </Literal>
                 <Literal>
                     <ID>method</ID>
-                    <ToolTip>Choose a default value for the field</ToolTip>
-                    <Default>null</Default>
+                    <ToolTip>Choose the request method: Get, Post, Put ...</ToolTip>
+                    <Default>Get</Default>
                 </Literal>
-                <Literal default="true" Editable="false">
-                    <ID>classname</ID>
-                    <ToolTip>Class name</ToolTip>
-                    <Function>ClassName()</Function>
-                    <Default>ClassNamePlaceholder</Default>
+                <Literal>
+                    <ID>methodname</ID>
+                    <ToolTip>Method name</ToolTip>
+                    <Default>Name</Default>
+                </Literal>
+                <Literal>
+                    <ID>code</ID>
+                    <Default></Default>
                 </Literal>
             </Declarations>
             <Code Language="CSharp">
@@ -39,7 +48,7 @@
                     [Route($route$)]
                     [Http$method$]
                     [Authorize]
-                    public IHttpActionResult $methodname$($params$) {
+                    public IHttpActionResult $methodname$() {
                         $code$
                     }
                 ]]>

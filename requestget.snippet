@@ -44,7 +44,7 @@
             </Declarations>
             <Code Language="CSharp">
                 <![CDATA[
-                    public async Task<Maybe<$type$>> $requestname$ ($params$) => {
+                    public async Task<Maybe<$type$>> $requestname$ ($params$) {
                         return await RequestGet<$type$>(new {
                             $queryparams$,
                         }, $endpoint$);

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>GET request</Title>
+            <Author>João Bartolot</Author>
+            <Description>Generate a GET request for Xamarin forms</Description>
+            <Shortcut>rget</Shortcut>
+        </Header>
+        <Snippet>
+            <Imports>
+                <Import>
+                    <Namespace>System.Threading.Tasks</Namespace>
+                </Import>
+                <Import>
+                    <Namespace>CSharpFunctionalExtensions</Namespace>
+                </Import>
+            </Imports>
+
+            <Declarations>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>Return type</ToolTip>
+                    <Default>string</Default>
+                </Literal>
+                <Literal>
+                    <ID>params</ID>
+                    <ToolTip>Method parameters.</ToolTip>
+                    <Default>param</Default>
+                </Literal>
+                <Literal>
+                    <ID>requestname</ID>
+                    <ToolTip>Method name</ToolTip>
+                    <Default>Name</Default>
+                </Literal>
+                <Literal>
+                    <ID>queryparams</ID>
+                    <Default>// Query parameters</Default>
+                </Literal>
+                <Literal>
+                    <ID>endpoint</ID>
+                    <Default>""</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="CSharp">
+                <![CDATA[
+                    public async Task<Maybe<$type$>> $requestname$ ($params$) => {
+                        return await RequestGet<$type$>(new {
+                            $queryparams$,
+                        }, $endpoint$);
+                    }
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Command property</Title>
+            <Author>João Bartolot</Author>
+            <Description>Generate a Command property for Xamarin forms</Description>
+            <Shortcut>cmd</Shortcut>
+        </Header>
+        <Snippet>
+            <Imports>
+                <Import>
+                    <Namespace>Xamarin.Forms</Namespace>
+                </Import>
+            </Imports>
+
+            <Declarations>
+                <Literal>
+                    <ID>params</ID>
+                    <ToolTip>Command parameters.</ToolTip>
+                    <Default>params</Default>
+                </Literal>
+                <Literal>
+                    <ID>commandname</ID>
+                    <ToolTip>Method name</ToolTip>
+                    <Default>Name</Default>
+                </Literal>
+                <Literal>
+                    <ID>code</ID>
+                    <Default></Default>
+                </Literal>
+            </Declarations>
+            <Code Language="CSharp">
+                <![CDATA[
+                    public Command $commandname$ => new Command ($params$) {
+                        $code$
+                    }
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
